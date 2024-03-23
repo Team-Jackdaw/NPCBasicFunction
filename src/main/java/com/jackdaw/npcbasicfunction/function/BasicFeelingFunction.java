@@ -3,7 +3,7 @@ package com.jackdaw.npcbasicfunction.function;
 import com.jackdaw.chatwithnpc.ChatWithNPCMod;
 import com.jackdaw.chatwithnpc.conversation.ConversationHandler;
 import com.jackdaw.chatwithnpc.npc.NPCEntity;
-import com.jackdaw.chatwithnpc.openaiapi.functioncalling.CustomFunction;
+import com.jackdaw.chatwithnpc.openaiapi.function.CustomFunction;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.particle.ParticleTypes;

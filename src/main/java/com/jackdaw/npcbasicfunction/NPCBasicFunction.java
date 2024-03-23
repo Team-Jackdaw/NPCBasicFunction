@@ -1,6 +1,6 @@
 package com.jackdaw.npcbasicfunction;
 
-import com.jackdaw.chatwithnpc.openaiapi.functioncalling.FunctionManager;
+import com.jackdaw.chatwithnpc.openaiapi.function.FunctionManager;
 import com.jackdaw.npcbasicfunction.function.BasicActionFunction;
 import com.jackdaw.npcbasicfunction.function.BasicFeelingFunction;
 import com.jackdaw.npcbasicfunction.function.GiveDiamondFunction;
