@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "npcbasicfunction",
+  "version": "${version}",
+  "name": "NPCBasicFunction",
+  "description": "A mod to add basic actions on NPC.",
+  "authors": [
+    "Team-Jackdaw"
+  ],
+  "contact": {
+    "repo": "https://github.com/Team-Jackdaw/NPCBasicFunction"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/npcbasicfunction/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.jackdaw.npcbasicfunction.NPCBasicFunction"
+    ]
+  },
+  "mixins": [
+    "npcbasicfunction.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "chat-with-npc": "*"
+  }
+}
