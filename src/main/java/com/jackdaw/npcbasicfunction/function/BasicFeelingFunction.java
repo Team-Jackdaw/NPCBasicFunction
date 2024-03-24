@@ -22,6 +22,7 @@ public class BasicFeelingFunction extends CustomFunction {
         description = "This function is used to express your feelings. You can `shake head` if you feel bad or disagree with something, or `feel happy` if you feel happy or agree with something.";
         properties = Map.of(
                 "feeling", Map.of(
+                        "type", "string",
                         "description", "This is your feeling.",
                         "enum", List.of("SHAKE_HEAD", "FEEL_HAPPY")
                 )
@@ -34,7 +35,7 @@ public class BasicFeelingFunction extends CustomFunction {
     }
 
     @Override
-    public Map<String, String> execute(@NotNull ConversationHandler conversation, @NotNull Map args) {
+    public Map<String, String> execute(@NotNull ConversationHandler conversation, @NotNull Map<String, Object> args) {
         String feeling = (String) args.get("feeling");
         try {
             NPCEntity npc = conversation.getNpc();

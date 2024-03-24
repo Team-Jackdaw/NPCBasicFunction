@@ -14,19 +14,24 @@ public class GiveDiamondFunction extends CustomFunction {
         description = "This function is used to give player a diamond. You can give player diamonds if you want.";
         properties = Map.of(
                 "number", Map.of(
-                        "type", "string",
+                        "type", "integer",
                         "description", "the number of diamonds to give to the player."
                 )
         );
     }
 
     @Override
-    public Map<String, String> execute(@NotNull ConversationHandler conversation, @NotNull Map args) {
+    public Map<String, String> execute(@NotNull ConversationHandler conversation, @NotNull Map<String, Object> args) {
         int number;
-        try{
-            number = Integer.parseInt((String) args.get("number"));
-        } catch (NumberFormatException e) {
-            number = 1;
+        try {
+            number = (int) args.get("number");
+        } catch (ClassCastException ignore) {
+            try{
+                double doubleNumber = Double.parseDouble(args.get("number").toString());
+                number = (int) doubleNumber;
+            } catch (NumberFormatException ignore2) {
+                number = 1;
+            }
         }
         ItemStack diamond = new ItemStack(Items.DIAMOND, number);
         conversation.getNpc().findNearbyPlayers(10).forEach(player -> player.giveItemStack(diamond));

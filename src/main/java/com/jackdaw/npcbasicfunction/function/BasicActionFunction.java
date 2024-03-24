@@ -21,6 +21,7 @@ public class BasicActionFunction extends CustomFunction {
         description = "This function is used to express your movement. You can `walk to player` if you want, or `escape` if you think you are in danger.";
         properties = Map.of(
                 "action", Map.of(
+                        "type", "string",
                         "description", "This is your movement.",
                         "enum", List.of("WALK_TO_PLAYER", "ESCAPE")
                 )
@@ -33,7 +34,7 @@ public class BasicActionFunction extends CustomFunction {
     }
 
     @Override
-    public Map<String, String> execute(@NotNull ConversationHandler conversation, @NotNull Map args) {
+    public Map<String, String> execute(@NotNull ConversationHandler conversation, @NotNull Map<String, Object> args) {
         String action = (String) args.get("action");
         try {
             NPCEntity npc = conversation.getNpc();
