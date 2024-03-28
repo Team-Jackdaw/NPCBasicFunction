@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    modImplementation "com.jackdaw:chat-with-NPC:${project.chat_with_npc_version}"
+    modImplementation "com.jackdaw:chat-with-npc:${project.chat_with_npc_version}"
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
@@ -86,6 +86,7 @@ publishing {
 
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
+        mavenLocal()
         // Add repositories to publish to here.
         // Notice: This block does NOT have the same function as the block in the top level.
         // The repositories here will be used for publishing your artifact, not for
